@@ -5,6 +5,7 @@ import com.raven.form.BanHangForm;
 import com.raven.form.FormHoaDon;
 
 import com.raven.form.NhanVienForm;
+import com.raven.form.SanPhamForm;
 import com.raven.form.VoucherForm;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -14,7 +15,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         init();
-        //showForm(new demo());
+        showForm(new BanHangForm());
+        
     }
 
     private void showForm(Component com) {
@@ -33,11 +35,13 @@ public class Main extends javax.swing.JFrame {
                 //show form
                 if (index == 0) {
                     showForm(new BanHangForm());
-                } else if (index == 2) {
+                } else if (index == 1) {
                     showForm(new FormHoaDon());
+                } else if (index == 2) {
+                    showForm(new SanPhamForm());
                 } else if (index == 3) {
                     showForm(new VoucherForm());
-                }else if (index == 5) {
+                } else if (index == 5) {
                     showForm(new NhanVienForm());
                 }
                 //JOptionPane.showMessageDialog(null, index + "");
@@ -67,7 +71,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("sdjfhdfjsdfd");
+        jLabel1.setText("ok");
         body.add(jLabel1, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);

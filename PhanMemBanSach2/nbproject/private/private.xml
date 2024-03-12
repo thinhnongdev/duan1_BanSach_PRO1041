@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/HoaDon.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/event/EventMenu.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/demo2.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/model/Model_Menu.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/component/Menu.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/main/Main.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/service/SanPhamService.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/utils/GetMaSanPham.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/SanPhamForm.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/main/Main.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/service/SanPhamCTservice.java</file>
+            <file>file:/D:/Github/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/SanPhamCTform.java</file>
         </group>
     </open-files>
 </project-private>

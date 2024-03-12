@@ -3,26 +3,26 @@ package com.raven.main;
 import com.raven.event.EventMenu;
 import com.raven.form.BanHangForm;
 import com.raven.form.FormHoaDon;
+import com.raven.form.LoginForm;
 import com.raven.form.VoucherForm;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
-
+    
     public Main() {
         initComponents();
         init();
-        //showForm(new demo());
     }
-
+    
     private void showForm(Component com) {
         body.removeAll();
         body.add(com);
         body.repaint();
         body.revalidate();
-
+        
     }
-
+    
     private void init() {
         menu2.initMoving(this);
         menu2.addEventMenu(new EventMenu() {
@@ -31,16 +31,22 @@ public class Main extends javax.swing.JFrame {
                 //show form
                 if (index == 0) {
                     showForm(new BanHangForm());
-                } else if (index == 2) {
+                } else if (index == 1) {
                     showForm(new FormHoaDon());
                 } else if (index == 3) {
                     showForm(new VoucherForm());
+                } else if (index == 7) {
+                    //đăng xuất
+                    int result = JOptionPane.showConfirmDialog(null, "Bạn có muốn đăng xuất không?");
+                    if (result == JOptionPane.YES_OPTION) {
+                        System.exit(0);
+                    }
                 }
-                //JOptionPane.showMessageDialog(null, index + "");
+                
             }
         });
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -106,7 +112,7 @@ public class Main extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
     }//GEN-LAST:event_formWindowOpened
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -170,7 +170,7 @@ public class VoucherForm extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("Danh sách khuyến mại", jPanel4);
+        jTabbedPane1.addTab("Danh sách voucher", jPanel4);
         jTabbedPane1.addTab("tab2", jTabbedPane2);
 
         jButton1.setText("Xóa trắng");

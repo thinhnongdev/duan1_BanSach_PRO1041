@@ -1,8 +1,9 @@
 package com.raven.main;
 
 import com.raven.event.EventMenu;
+import com.raven.form.BanHangForm;
 import com.raven.form.FormHoaDon;
-import com.raven.form.demo2;
+import com.raven.form.VoucherForm;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
@@ -27,10 +28,13 @@ public class Main extends javax.swing.JFrame {
         menu2.addEventMenu(new EventMenu() {
             @Override
             public void menuIndexChange(int index) {
-                if (index == 2) {
+                //show form
+                if (index == 0) {
+                    showForm(new BanHangForm());
+                } else if (index == 2) {
                     showForm(new FormHoaDon());
-                }else if(index==3){
-                    showForm(new demo2());
+                } else if (index == 3) {
+                    showForm(new VoucherForm());
                 }
                 //JOptionPane.showMessageDialog(null, index + "");
             }

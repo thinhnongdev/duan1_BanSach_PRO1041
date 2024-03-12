@@ -8,12 +8,12 @@ package com.raven.form;
  *
  * @author Admin
  */
-public class HoaDon extends javax.swing.JPanel {
+public class FormHoaDon extends javax.swing.JPanel {
 
     /**
      * Creates new form demo
      */
-    public HoaDon() {
+    public FormHoaDon() {
         initComponents();
     }
 
@@ -339,7 +339,7 @@ public class HoaDon extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblTenKH;
     private javax.swing.JLabel lblTenNV;
-    private javax.swing.JLabel lblTongTien;
+    javax.swing.JLabel lblTongTien;
     private javax.swing.JPanel pnlTimKiem;
     private javax.swing.JTable tblHoaDon;
     private javax.swing.JTable tblSanPham;

@@ -33,7 +33,7 @@ public class VoucherService {
     }
 
     public Voucher getVoucher(String id) {
-        sql = "select MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa from Voucher where MaVoucher = ?";
+        sql = "select idVoucher,MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa,NgayTao,TrangThai,NgaySua from Voucher where MaVoucher = ?";
         try {
             con = DBConnect.getConnection();
             PreparedStatement stmt = con.prepareCall(sql);
@@ -48,6 +48,9 @@ public class VoucherService {
                 voucher.setThoiGianKetThuc(rs.getDate(5));
                 voucher.setGiamToiDa(rs.getDouble(6));
                 voucher.setMoTa(rs.getString(7));
+                voucher.setNgayTao(rs.getDate(8));
+                voucher.setTrangThai(rs.getString(9));
+                voucher.setNgaySua(rs.getDate(10));
 
                 return voucher;
             }
@@ -58,7 +61,7 @@ public class VoucherService {
     }
 
     public Voucher getVoucherByPhanTram(int phantram) {
-        sql = "select MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa from Voucher where PhanTramGiam = ? ";
+        sql = "select idVoucher,MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa,NgayTao,TrangThai,NgaySua from Voucher where PhanTramGiam = ? ";
         try {
             con = DBConnect.getConnection();
             PreparedStatement stmt = con.prepareCall(sql);
@@ -73,7 +76,9 @@ public class VoucherService {
                 voucher.setThoiGianKetThuc(rs.getDate(5));
                 voucher.setGiamToiDa(rs.getDouble(6));
                 voucher.setMoTa(rs.getString(7));
-
+                voucher.setNgayTao(rs.getDate(8));
+                voucher.setTrangThai(rs.getString(9));
+                voucher.setNgaySua(rs.getDate(10));
                 return voucher;
             }
         } catch (Exception e) {
@@ -108,22 +113,29 @@ public class VoucherService {
         return -1;
     }
 
-    public int updateVoucher(Voucher voucher) {
+    public int updateVoucher(String ma, Voucher vc) {
         sql = "update Voucher set PhanTramGiam = ?, ThoiGianBatDau = ?,ThoiGianKetThuc=?,GiamToiDa = ?,MoTa=? where MaVoucher = ?";
         try {
             PreparedStatement stmt = con.prepareCall(sql);
-            stmt.setInt(1, voucher.getPhanTramGiam());
+            stmt.setInt(1, vc.getPhanTramGiam());
 
-            long date = voucher.getThoiGianBatDau().getTime();
+            long date = vc.getThoiGianBatDau().getTime();
 
             stmt.setDate(2, new Date(date));
             stmt.setDate(3, new Date(date));
-            stmt.setDouble(6, voucher.getGiamToiDa());
-            stmt.setString(7, voucher.getMoTa());
+            stmt.setDouble(6, vc.getGiamToiDa());
+            stmt.setString(7, vc.getMoTa());
             return stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return -1;
+    }
+    
+    public Voucher getAt(int index) {
+        if (index >= 0) {
+            return listVoucher.get(index);
+        }
+        return null;
     }
 }

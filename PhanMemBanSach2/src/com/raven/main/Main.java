@@ -7,6 +7,8 @@ import com.raven.form.FormHoaDon;
 import com.raven.form.NhanVienForm;
 import com.raven.form.SanPhamForm;
 import com.raven.form.VoucherForm;
+import com.raven.form.vew_hoadon;
+
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
@@ -36,7 +38,7 @@ public class Main extends javax.swing.JFrame {
                 if (index == 0) {
                     showForm(new BanHangForm());
                 } else if (index == 1) {
-                    showForm(new FormHoaDon());
+                    showForm(new vew_hoadon());
                 } else if (index == 2) {
                     showForm(new SanPhamForm());
                 } else if (index == 3) {

@@ -3,7 +3,6 @@ package com.raven.main;
 import com.raven.event.EventMenu;
 import com.raven.form.BanHangForm;
 import com.raven.form.FormHoaDon;
-
 import com.raven.form.NhanVienForm;
 import com.raven.form.SanPhamForm;
 import com.raven.form.VoucherForm;
@@ -16,7 +15,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         init();
         showForm(new BanHangForm());
-        
+
     }
 
     private void showForm(Component com) {
@@ -43,6 +42,8 @@ public class Main extends javax.swing.JFrame {
                     showForm(new VoucherForm());
                 } else if (index == 5) {
                     showForm(new NhanVienForm());
+                } else if (index == 4) {
+
                 }
                 //JOptionPane.showMessageDialog(null, index + "");
             }

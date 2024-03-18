@@ -37,7 +37,7 @@ public class SanPhamCTform extends javax.swing.JFrame {
         model = (DefaultTableModel) tblSachCT.getModel();
         model.setRowCount(0);
         for (SanPhamCT sp : list) {
-            Object[] row = new Object[]{sp.getMasach(), sp.getMasachchitiet(), sp.getTensach(), sp.getTentacgia(), sp.getTentheloai(), sp.getTennhacungcap(), sp.getTenanh(), sp.getTennhaxuatban(), sp.getDongia(), sp.getSoluong(), sp.getNgaytao(), sp.getTrangthai(), sp.getNgaysua()};
+            Object[] row = new Object[]{sp.getMasach(), sp.getMasachchitiet(), sp.getTensach(), sp.getTentacgia(), sp.getTentheloai(), sp.getTennhacungcap(), sp.getTenanh(), sp.getTennhaxuatban(), sp.getDongia(), sp.getSoluong(), sp.getNgaytao(), sp.getTrangthai(), sp.getNgaysua(),sp.getMota()};
             model.addRow(row);
         }
     }
@@ -58,13 +58,13 @@ public class SanPhamCTform extends javax.swing.JFrame {
 
         tblSachCT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã Sách", "Mã Sách Chi Tiết", "Tên Sách", "Tên Tác Giả", "Tên Thể Loại", "Tên Nhà Cung Cấp", "Tên ảnh", "Tên Nhà Xuất Bản", "Đơn Giá", "Số Lượng", "Ngày Tạo", "Trạng Thái", "Ngày Sửa"
+                "Mã Sách", "Mã Sách Chi Tiết", "Tên Sách", "Tên Tác Giả", "Tên Thể Loại", "Tên Nhà Cung Cấp", "Tên ảnh", "Tên Nhà Xuất Bản", "Đơn Giá", "Số Lượng", "Ngày Tạo", "Trạng Thái", "Ngày Sửa", "Mô tả"
             }
         ));
         jScrollPane1.setViewportView(tblSachCT);

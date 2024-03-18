@@ -25,11 +25,11 @@ public class SanPhamCT {
     private Date ngaytao;
     private String trangthai;
     private Date ngaysua;
-
+    private String mota;
     public SanPhamCT() {
     }
 
-    public SanPhamCT(String masach, String masachchitiet, String tensach, String tentacgia, String tentheloai, String tennhacungcap, String tenanh, String tennhaxuatban, double dongia, int soluong, Date ngaytao, String trangthai, Date ngaysua) {
+    public SanPhamCT(String masach, String masachchitiet, String tensach, String tentacgia, String tentheloai, String tennhacungcap, String tenanh, String tennhaxuatban, double dongia, int soluong, Date ngaytao, String trangthai, Date ngaysua, String mota) {
         this.masach = masach;
         this.masachchitiet = masachchitiet;
         this.tensach = tensach;
@@ -43,8 +43,16 @@ public class SanPhamCT {
         this.ngaytao = ngaytao;
         this.trangthai = trangthai;
         this.ngaysua = ngaysua;
+        this.mota = mota;
     }
 
+    public String getMota() {
+        return mota;
+    }
+
+    public void setMota(String mota) {
+        this.mota = mota;
+    }
     public String getMasach() {
         return masach;
     }

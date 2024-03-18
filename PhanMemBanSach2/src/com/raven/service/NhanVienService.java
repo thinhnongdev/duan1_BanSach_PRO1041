@@ -105,6 +105,7 @@ public class NhanVienService {
         }
         return result;
     }
+
     public NhanVien getAtNV(int index) {
         return listNV.get(index);
     }

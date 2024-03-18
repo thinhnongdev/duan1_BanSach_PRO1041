@@ -446,7 +446,17 @@ public class VoucherForm extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_SuaActionPerformed
 
     private void btn_XoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_XoaActionPerformed
-        Xoa();
+        String ma;
+        ma = txt_MaVoucher.getText();
+        int chon = 0;
+        if (chon == 0) {
+            ma = tblVoucher.getValueAt(index, 1).toString();
+            vcs.deleteVoucher(ma);
+            JOptionPane.showMessageDialog(this, "Xóa thành công");
+            SoftDelete();
+        } else {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        }
     }//GEN-LAST:event_btn_XoaActionPerformed
 
     private void tblVoucherMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVoucherMouseClicked
@@ -575,7 +585,7 @@ public class VoucherForm extends javax.swing.JPanel {
 
     }
 
-    public void Xoa() {
+    public void SoftDelete() {
         DefaultTableModel model = (DefaultTableModel) tblVoucher.getModel();
         int selectedRow = tblVoucher.getSelectedRow();
         if (selectedRow != -1) {

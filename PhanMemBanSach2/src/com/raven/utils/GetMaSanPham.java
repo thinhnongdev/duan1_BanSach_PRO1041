@@ -4,13 +4,11 @@
  */
 package com.raven.utils;
 
-import com.raven.model.SanPham;
-
-/**
- *
- * @author Admin
- */
 public class GetMaSanPham {
-    public static String maSanPham=null;
-    public static int indexSP=-1;
+
+    public static String maSanPham = null;
+    public static int indexSP = -1;
+    public static int indexSPCT = -1;
+    public static String maSPCT=null;
+    
 }

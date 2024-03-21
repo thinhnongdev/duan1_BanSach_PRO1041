@@ -6,6 +6,7 @@ import com.raven.form.FormHoaDon;
 
 import com.raven.form.NhanVienForm;
 import com.raven.form.SanPhamForm;
+import com.raven.form.ThongKeForm;
 import com.raven.form.VoucherForm;
 import com.raven.form.vew_hoadon;
 
@@ -18,7 +19,6 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         init();
         showForm(new BanHangForm());
-        
     }
 
     private void showForm(Component com) {
@@ -43,6 +43,8 @@ public class Main extends javax.swing.JFrame {
                     showForm(new SanPhamForm());
                 } else if (index == 3) {
                     showForm(new VoucherForm());
+                } else if (index == 4) {
+                    showForm(new ThongKeForm());
                 } else if (index == 5) {
                     showForm(new NhanVienForm());
                 }

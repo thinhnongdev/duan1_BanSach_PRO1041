@@ -105,6 +105,36 @@ public class NhanVienService {
         }
         return result;
     }
+    public List<NhanVien> FindNV(String ma){
+        listNV = new ArrayList();
+        sql = "select * from NhanVien where MaNhanVien like ? or TenNhanVien like ?";
+        try{
+            con = DBConnect.getConnection();
+            pre = con.prepareStatement(sql);
+            pre.setObject(1, ma);
+//            pre.setObject(2, ten);
+            rs = pre.executeQuery();
+            while(rs.next()){
+                NhanVien nv = new NhanVien();
+                nv.setIdNhanVien(rs.getInt(1));
+                nv.setMaNhanVien(rs.getString(2));
+                nv.setTenNhanVien(rs.getString(3));
+                nv.setTenDangNhap(rs.getString(4));
+                nv.setMatKhau(rs.getString(5));
+                nv.setGioiTinh(rs.getBoolean(6));
+                nv.setEmail(rs.getString(7));
+                nv.setDiaChi(rs.getString(8));
+                nv.setSDT(rs.getString(9));
+                nv.setNgayTao(rs.getDate(10));
+                nv.setTrangThai(rs.getString(11));
+                nv.setIdChucVu(rs.getInt(12));
+                listNV.add(nv);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return listNV;
+    }
     public NhanVien getAtNV(int index) {
         return listNV.get(index);
     }

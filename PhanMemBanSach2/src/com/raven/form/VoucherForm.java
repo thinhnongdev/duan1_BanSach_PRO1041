@@ -4,7 +4,6 @@ import com.raven.model.Voucher;
 import com.raven.service.VoucherService;
 import com.toedter.calendar.JDateChooser;
 import java.text.ParseException;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -129,6 +128,9 @@ public class VoucherForm extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblVoucher = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách sản phẩm"));
 
         jLabel1.setText("Mã sản phẩm:");
@@ -182,6 +184,7 @@ public class VoucherForm extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin khuyễn mãi"));
 
         jLabel2.setText("Mã voucher:");
@@ -354,6 +357,7 @@ public class VoucherForm extends javax.swing.JPanel {
                     .addComponent(btn_Xoa)))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách khuyễn mãi"));
 
         tblVoucher.setModel(new javax.swing.table.DefaultTableModel(

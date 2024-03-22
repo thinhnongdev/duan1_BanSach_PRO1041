@@ -166,6 +166,34 @@ public class SanPhamCTservice {
         return result;
     }
 
+    public void ImportExcel(SanPhamCT sp) {
+
+        int result = -1;
+        try {
+            sql = "{Call ThemSanPhamCT(?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            con = DBConnect.getConnection();
+            cs = con.prepareCall(sql);
+            cs.setObject(1, sp.getTenanh());
+            cs.setObject(2, sp.getTensach());
+            cs.setObject(3, sp.getTennhacungcap());
+            cs.setObject(4, sp.getTentacgia());
+            cs.setObject(5, sp.getTentheloai());
+            cs.setObject(6, sp.getTennhaxuatban());
+            cs.setObject(7, sp.getMasachchitiet());
+            cs.setObject(8, sp.getDongia());
+            cs.setInt(9, sp.getSoluong());
+            cs.setObject(10, sp.getNgaytao());
+            cs.setObject(11, sp.getTrangthai());
+            cs.setObject(12, sp.getNgaysua());
+            cs.setObject(13, sp.getMota());
+            result = cs.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = -1;
+        }
+    }
+
     public int updateSPCT(SanPhamCT sp, String ma) {
         int result = -1;
         try {
@@ -201,6 +229,23 @@ public class SanPhamCTservice {
             con = DBConnect.getConnection();
             ps = con.prepareCall(sql);
             ps.setObject(1, trangthai);
+            ps.setObject(2, maspct);
+            result = ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = 0;
+        }
+        return result;
+    }
+
+    public int CapNhatSoLuongSP(int soluong, String maspct) {
+        int result = 0;
+        try {
+            sql = "update SachChiTiet set SoLuong=? where MaSachChiTiet=?";
+            con = DBConnect.getConnection();
+            ps = con.prepareCall(sql);
+            ps.setObject(1, soluong);
             ps.setObject(2, maspct);
             result = ps.executeUpdate();
 

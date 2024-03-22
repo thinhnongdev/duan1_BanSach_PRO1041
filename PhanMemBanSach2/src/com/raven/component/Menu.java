@@ -8,13 +8,18 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Path2D;
+import java.net.URL;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
@@ -35,6 +40,7 @@ public class Menu extends javax.swing.JPanel {
 
     public Menu() {
         initComponents();
+        
         setOpaque(false);
         listMenu.setOpaque(false);
         listMenu.addEventSelectedMenu(new EventMenuSelected() {
@@ -94,10 +100,11 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         initData();
+        lblLogo.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(Menu.class.getResource("logoStore3.png"))));
     }
 
     private void initData() {
-         listMenu.addItem(new Model_Menu("1", "Bán hàng", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("1", "Bán hàng", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("2", "Hóa đơn", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("3", "Sản phẩm", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("4", "Khuyến mại", Model_Menu.MenuType.MENU));
@@ -108,20 +115,19 @@ public class Menu extends javax.swing.JPanel {
         listMenu.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
     }
 
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelMoving = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
         listMenu = new com.raven.swing.ListMenu<>();
 
         panelMoving.setOpaque(false);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/logo.png"))); // NOI18N
-        jLabel1.setText("Application");
+        lblLogo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        lblLogo.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panelMovingLayout = new javax.swing.GroupLayout(panelMoving);
         panelMoving.setLayout(panelMovingLayout);
@@ -129,14 +135,14 @@ public class Menu extends javax.swing.JPanel {
             panelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMovingLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         panelMovingLayout.setVerticalGroup(
             panelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMovingLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMovingLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -202,7 +208,7 @@ public class Menu extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblLogo;
     private com.raven.swing.ListMenu<String> listMenu;
     private javax.swing.JPanel panelMoving;
     // End of variables declaration//GEN-END:variables

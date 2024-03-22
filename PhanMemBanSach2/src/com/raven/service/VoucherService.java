@@ -161,6 +161,37 @@ public class VoucherService {
         return result;
     }
 
+    public Voucher Loc(int phanTram, String trangThai, Date thoiGianBatDau, Date thoiGianKetThuc) {
+        sql = "select * from voucher where PhanTramGiam like ? And TrangThai like ? And ThoiGianBatDau like ? And ThoiGianKetThuc like ?";
+        try {
+            con = DBConnect.getConnection();
+            PreparedStatement ps = con.prepareCall(sql);
+            ps.setInt(1, phanTram);
+            ps.setString(2, trangThai);
+            ps.setDate(3, new java.sql.Date(thoiGianBatDau.getTime()));
+            ps.setDate(4, new java.sql.Date(thoiGianKetThuc.getTime()));
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Voucher voucher = new Voucher();
+                voucher.setMaVoucher(rs.getString(1));
+                voucher.setTenVoucher(rs.getString(2));
+                voucher.setPhanTramGiam(rs.getInt(3));
+                voucher.setThoiGianBatDau(rs.getDate(4));
+                voucher.setThoiGianKetThuc(rs.getDate(5));
+                voucher.setGiamToiDa(rs.getDouble(6));
+                voucher.setMoTa(rs.getString(7));
+                voucher.setNgayTao(rs.getDate(8));
+                voucher.setTrangThai(rs.getString(9));
+                voucher.setNgaySua(rs.getDate(10));
+
+                return voucher;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public Voucher getAt(int index) {
         if (index >= 0) {
             return listVoucher.get(index);

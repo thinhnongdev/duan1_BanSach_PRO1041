@@ -1,36 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.raven.main;
 
 import javax.swing.JOptionPane;
 import java.sql.*;
 import com.raven.utils.DBConnect;
 
-/**
- *
- * @author Admin
- */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-//        txt_taiKhoan.setBackground(new java.awt.Color(0, 0, 0, 2));
-//        txt_taiKhoan.setOpaque(false);
-//        pwd_matKhau.setBackground(new java.awt.Color(0, 0, 0, 2));
-//        pwd_matKhau.setOpaque(false);
-//        lbl_showPass.setVisible(false);
-//        lbl_hiddenPass.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,21 +27,16 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btn_dangNhap = new javax.swing.JButton();
         pwd_matKhau = new javax.swing.JPasswordField();
-        jLabel5 = new javax.swing.JLabel();
+        lbl_thoat = new javax.swing.JLabel();
         lbl_userIcon = new javax.swing.JLabel();
         lbl_hiddenPass = new javax.swing.JLabel();
         lbl_showPass = new javax.swing.JLabel();
         cbb_Role = new javax.swing.JComboBox<>();
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(76, 161, 175));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/logoStore200px.png"))); // NOI18N
@@ -81,13 +64,13 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(btn_dangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
         jPanel1.add(pwd_matKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 196, 240, 41));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/exit.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_thoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/exit.png"))); // NOI18N
+        lbl_thoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                lbl_thoatMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 6, -1, -1));
+        jPanel1.add(lbl_thoat, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 6, -1, -1));
 
         lbl_userIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/userLogin.png"))); // NOI18N
         jPanel1.add(lbl_userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, -1, -1));
@@ -115,26 +98,22 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dangNhapActionPerformed
         String username = txt_taiKhoan.getText();
         String password = new String(pwd_matKhau.getPassword());
         String option = cbb_Role.getSelectedItem().toString();
         if (username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showConfirmDialog(rootPane, "Không để trống tài khoản hoặc mật khẩu", "Error", 1);
+            JOptionPane.showMessageDialog(this, "Không để trống tên tài khoản hoặc mật khẩu");
         } else {
             try {
                 Connection conn = DBConnect.getConnection();
@@ -153,26 +132,34 @@ public class Login extends javax.swing.JFrame {
                     } else if (option.equalsIgnoreCase("Nhân viên") && s1.equalsIgnoreCase("2")) {
                         JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
                         new Main().setVisible(true);
-                    } else {
-                        JOptionPane.showConfirmDialog(rootPane, "Tên tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", 1);
+                    }else if (option.equalsIgnoreCase("Nhân viên") && s1.equalsIgnoreCase("3")) {
+                        JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
+                        new Main().setVisible(true);
+                    } 
+                    else if (option.equalsIgnoreCase("Nhân viên") && s1.equalsIgnoreCase("4")) {
+                        JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
+                        new Main().setVisible(true);
+                    } 
+                    else {
+                        JOptionPane.showMessageDialog(rootPane, "Tên tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", 1);
                     }
                 } else {
-                    JOptionPane.showConfirmDialog(rootPane, "Tên tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", 1);
+                    JOptionPane.showMessageDialog(rootPane, "Tên tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", 1);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
     }//GEN-LAST:event_btn_dangNhapActionPerformed
 
-    private void lbl_showPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_showPassMouseClicked
-        pwd_matKhau.setEchoChar((char) 8226);
-        lbl_showPass.setVisible(false);
-        lbl_showPass.setEnabled(false);
-        lbl_hiddenPass.setEnabled(true);
-        lbl_hiddenPass.setVisible(true);
-    }//GEN-LAST:event_lbl_showPassMouseClicked
+    private void lbl_thoatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_thoatMouseClicked
+        int exit = JOptionPane.showConfirmDialog(null, "Thoát!", "Exit", JOptionPane.YES_NO_OPTION);
+        if (exit == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else {
+            return;
+        }
+    }//GEN-LAST:event_lbl_thoatMouseClicked
 
     private void lbl_hiddenPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_hiddenPassMouseClicked
         pwd_matKhau.setEchoChar((char) 0);
@@ -182,11 +169,43 @@ public class Login extends javax.swing.JFrame {
         lbl_showPass.setVisible(true);
     }//GEN-LAST:event_lbl_hiddenPassMouseClicked
 
+    private void lbl_showPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_showPassMouseClicked
+        pwd_matKhau.setEchoChar((char) 8226);
+        lbl_showPass.setVisible(false);
+        lbl_showPass.setEnabled(false);
+        lbl_hiddenPass.setEnabled(true);
+        lbl_hiddenPass.setVisible(true);
+    }//GEN-LAST:event_lbl_showPassMouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
@@ -201,13 +220,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_hiddenPass;
     private javax.swing.JLabel lbl_showPass;
+    private javax.swing.JLabel lbl_thoat;
     private javax.swing.JLabel lbl_userIcon;
     private javax.swing.JPasswordField pwd_matKhau;
     private javax.swing.JTextField txt_taiKhoan;

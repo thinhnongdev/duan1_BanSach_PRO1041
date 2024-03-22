@@ -10,4 +10,5 @@ public class GetMaSanPham {
     public static int indexSP = -1;
     public static int indexSPCT = -1;
     public static String maSPCT=null;
+    
 }

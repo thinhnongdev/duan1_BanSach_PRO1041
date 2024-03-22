@@ -45,7 +45,6 @@ public class Main extends javax.swing.JFrame {
                 } else if (index == 4) {
 
                 }
-                //JOptionPane.showMessageDialog(null, index + "");
             }
         });
     }

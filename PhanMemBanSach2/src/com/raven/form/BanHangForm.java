@@ -7,7 +7,7 @@ package com.raven.form;
 import com.raven.model.HoaDon;
 import com.raven.model.HoaDonChiTiet;
 import com.raven.model.SanPhamCT;
-import com.raven.model.voucher;
+import com.raven.model.Voucher;
 import com.raven.service.KhachHangService;
 import com.raven.service.SanPhamCTservice;
 import com.raven.service.VoucherService;
@@ -65,7 +65,7 @@ public class BanHangForm extends javax.swing.JPanel {
     void fillComboxPhieuGiamGia() {
         boxmodel = (DefaultComboBoxModel) cbxPhieuGiamGia.getModel();
         boxmodel.removeAllElements();
-        for (voucher vc : vcservice.getAll()) {
+        for (Voucher vc : vcservice.getAll()) {
             boxmodel.addElement(vc.getTenVoucher());
         }
     }
@@ -242,10 +242,7 @@ public class BanHangForm extends javax.swing.JPanel {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(242, 242, 242));
-
-        jPanel1.setBackground(new java.awt.Color(242, 242, 242));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hóa đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hóa đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -273,6 +270,11 @@ public class BanHangForm extends javax.swing.JPanel {
         });
 
         btnQuetMa.setText("Quét mã vạch");
+        btnQuetMa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuetMaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -301,43 +303,32 @@ public class BanHangForm extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(242, 242, 242));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel6.setBackground(new java.awt.Color(242, 242, 242));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hóa đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hóa đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Mã hóa đơn:");
 
         txtMaHoaDon.setEnabled(false);
 
         txtMaNhanVien.setEnabled(false);
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Mã nhân viên:");
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Tổng tiền:");
 
         txtTongTien.setEnabled(false);
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Phiếu giảm giá:");
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Thanh toán :");
 
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Tiền khách đưa:");
 
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Tiền khách CK:");
 
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Tiền thừa:");
 
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("HT thanh toán:");
 
         cbxHTthanhToan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -381,11 +372,10 @@ public class BanHangForm extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtTienThanhToan, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtTongTien, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtMaNhanVien, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtMaHoaDon, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cbxPhieuGiamGia, javax.swing.GroupLayout.Alignment.LEADING, 0, 205, Short.MAX_VALUE)))))
+                            .addComponent(txtTongTien, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMaNhanVien, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMaHoaDon, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxPhieuGiamGia, javax.swing.GroupLayout.Alignment.LEADING, 0, 205, Short.MAX_VALUE))))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
@@ -440,13 +430,10 @@ public class BanHangForm extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(242, 242, 242));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin khách hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin khách hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Mã KH:");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tên KH:");
 
         btnChonKhachHang.setText("Chọn");
@@ -512,8 +499,7 @@ public class BanHangForm extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(242, 242, 242));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Giỏ hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Giỏ hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         tblGioHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -563,8 +549,7 @@ public class BanHangForm extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
-        jPanel4.setBackground(new java.awt.Color(242, 242, 242));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách sản phẩm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách sản phẩm"));
 
         tblSPCT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -590,7 +575,6 @@ public class BanHangForm extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tìm kiếm:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -741,6 +725,17 @@ public class BanHangForm extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_btnXoaGioHangActionPerformed
+
+    private void btnQuetMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuetMaActionPerformed
+        new QRcode2().setVisible(true);
+       
+//        JFrame jf = new JFrame();
+//        KhachHangThanhToan khtt = new KhachHangThanhToan(jf, true);
+//        khtt.setVisible(true);
+//        if (khtt.isVisible() == false) {
+//            txtMaKH.setText(khtt.listKH.get(0).getMaKH());
+//            txtTenKH.setText(khtt.listKH.get(0).getTenKH());
+    }//GEN-LAST:event_btnQuetMaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

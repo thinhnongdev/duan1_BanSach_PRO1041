@@ -1,32 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.raven.model;
 
 import java.util.Date;
 
-/**
- *
- * @author Admin
- */
-public class voucher {
+public class Voucher {
 
-    private String maVoucher;
-    private String tenVoucher;
-    private int phanTramGiam;
-    private Date thoiGianBatDau;
-    private Date thoiGianKetThuc;
+    private int idVoucher, phanTramGiam;
+    private String maVoucher, tenVoucher, moTa, trangThai;
+    private Date thoiGianBatDau, thoiGianKetThuc, ngayTao, ngaySua;
     private double giamToiDa;
-    private String moTa;
-    private Date ngayTao;
-    private String trangThai;
-    private Date ngaySua;
 
-    public voucher() {
+    public Voucher() {
     }
 
-    public voucher(String maVoucher, String tenVoucher, int phanTramGiam, Date thoiGianBatDau, Date thoiGianKetThuc, double giamToiDa, String moTa, Date ngayTao, String trangThai, Date ngaySua) {
+    public Voucher(String maVoucher, String tenVoucher, int phanTramGiam, Date thoiGianBatDau, Date thoiGianKetThuc, double giamToiDa, String moTa, Date ngayTao, String trangThai, Date ngaySua) {
         this.maVoucher = maVoucher;
         this.tenVoucher = tenVoucher;
         this.phanTramGiam = phanTramGiam;
@@ -37,6 +23,49 @@ public class voucher {
         this.ngayTao = ngayTao;
         this.trangThai = trangThai;
         this.ngaySua = ngaySua;
+    }
+
+    public Voucher(int phanTramGiam, String maVoucher, String tenVoucher, String moTa, String trangThai, Date thoiGianBatDau, Date thoiGianKetThuc, Date ngayTao, Date ngaySua, double giamToiDa) {
+        this.phanTramGiam = phanTramGiam;
+        this.maVoucher = maVoucher;
+        this.tenVoucher = tenVoucher;
+        this.moTa = moTa;
+        this.trangThai = trangThai;
+        this.thoiGianBatDau = thoiGianBatDau;
+        this.thoiGianKetThuc = thoiGianKetThuc;
+        this.ngayTao = ngayTao;
+        this.ngaySua = ngaySua;
+        this.giamToiDa = giamToiDa;
+    }
+
+    public Voucher(int idVoucher, int phanTramGiam, String maVoucher, String tenVoucher, String moTa, String trangThai, Date thoiGianBatDau, Date thoiGianKetThuc, Date ngayTao, Date ngaySua, double giamToiDa) {
+        this.idVoucher = idVoucher;
+        this.phanTramGiam = phanTramGiam;
+        this.maVoucher = maVoucher;
+        this.tenVoucher = tenVoucher;
+        this.moTa = moTa;
+        this.trangThai = trangThai;
+        this.thoiGianBatDau = thoiGianBatDau;
+        this.thoiGianKetThuc = thoiGianKetThuc;
+        this.ngayTao = ngayTao;
+        this.ngaySua = ngaySua;
+        this.giamToiDa = giamToiDa;
+    }
+
+    public int getIdVoucher() {
+        return idVoucher;
+    }
+
+    public void setIdVoucher(int idVoucher) {
+        this.idVoucher = idVoucher;
+    }
+
+    public int getPhanTramGiam() {
+        return phanTramGiam;
+    }
+
+    public void setPhanTramGiam(int phanTramGiam) {
+        this.phanTramGiam = phanTramGiam;
     }
 
     public String getMaVoucher() {
@@ -55,12 +84,20 @@ public class voucher {
         this.tenVoucher = tenVoucher;
     }
 
-    public int getPhanTramGiam() {
-        return phanTramGiam;
+    public String getMoTa() {
+        return moTa;
     }
 
-    public void setPhanTramGiam(int phanTramGiam) {
-        this.phanTramGiam = phanTramGiam;
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
     }
 
     public Date getThoiGianBatDau() {
@@ -79,36 +116,12 @@ public class voucher {
         this.thoiGianKetThuc = thoiGianKetThuc;
     }
 
-    public double getGiamToiDa() {
-        return giamToiDa;
-    }
-
-    public void setGiamToiDa(double giamToiDa) {
-        this.giamToiDa = giamToiDa;
-    }
-
-    public String getMoTa() {
-        return moTa;
-    }
-
-    public void setMoTa(String moTa) {
-        this.moTa = moTa;
-    }
-
     public Date getNgayTao() {
         return ngayTao;
     }
 
     public void setNgayTao(Date ngayTao) {
         this.ngayTao = ngayTao;
-    }
-
-    public String getTrangThai() {
-        return trangThai;
-    }
-
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
     }
 
     public Date getNgaySua() {
@@ -119,4 +132,17 @@ public class voucher {
         this.ngaySua = ngaySua;
     }
 
+    public double getGiamToiDa() {
+        return giamToiDa;
+    }
+
+    public void setGiamToiDa(double giamToiDa) {
+        this.giamToiDa = giamToiDa;
+    }
+
+    public Object[] toDataRow() {
+        return new Object[]{
+            this.idVoucher, this.getMaVoucher(), this.getTenVoucher(), this.getPhanTramGiam(), this.getThoiGianBatDau(), this.getThoiGianKetThuc(), this.getGiamToiDa(), this.getMoTa(), this.getNgayTao(), this.getNgaySua(), this.getTrangThai()
+        };
+    }
 }

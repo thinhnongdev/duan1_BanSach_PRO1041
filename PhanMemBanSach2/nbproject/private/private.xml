@@ -12,12 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/VoucherForm.java</file>
             <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/QRcode2.java</file>
             <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/BanHangForm.java</file>
             <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/service/VoucherService.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/QRCode.java</file>
-            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/model/voucher.java</file>
+            <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/form/NhanVienForm.java</file>
             <file>file:/D:/QLDA/duan1_BanSach_PRO1041/PhanMemBanSach2/src/com/raven/main/Main.java</file>
         </group>
     </open-files>

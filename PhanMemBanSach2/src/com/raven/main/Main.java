@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class Main extends javax.swing.JFrame {
 
     public Main() {
+        
         initComponents();
         init();
         showForm(new BanHangForm());

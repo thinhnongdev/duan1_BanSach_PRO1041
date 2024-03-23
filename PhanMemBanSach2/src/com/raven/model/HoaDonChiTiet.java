@@ -4,6 +4,8 @@
  */
 package com.raven.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Admin
@@ -18,11 +20,13 @@ public class HoaDonChiTiet {
     private double donGia;
     private int soLuong;
     private double thanhTien;
+    private Date ngayTao;
+    private String trangThai;
 
     public HoaDonChiTiet() {
     }
 
-    public HoaDonChiTiet(String maHoaDon, String maHoaDonCT, String maSPCT, String tenSP, String theLoai, String tacGia, double donGia, int soLuong, double thanhTien) {
+    public HoaDonChiTiet(String maHoaDon, String maHoaDonCT, String maSPCT, String tenSP, String theLoai, String tacGia, double donGia, int soLuong, double thanhTien, Date ngayTao, String trangThai) {
         this.maHoaDon = maHoaDon;
         this.maHoaDonCT = maHoaDonCT;
         this.maSPCT = maSPCT;
@@ -32,7 +36,29 @@ public class HoaDonChiTiet {
         this.donGia = donGia;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
+        this.ngayTao = ngayTao;
+        this.trangThai = trangThai;
     }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
+   
+
+    public Date getNgayTao() {
+        return ngayTao;
+    }
+
+    public void setNgayTao(Date ngayTao) {
+        this.ngayTao = ngayTao;
+    }
+
+   
 
     public String getMaHoaDon() {
         return maHoaDon;

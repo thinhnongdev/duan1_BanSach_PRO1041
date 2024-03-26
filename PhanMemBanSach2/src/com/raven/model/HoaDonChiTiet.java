@@ -22,11 +22,12 @@ public class HoaDonChiTiet {
     private double thanhTien;
     private Date ngayTao;
     private String trangThai;
+    private Date ngaySua;
 
     public HoaDonChiTiet() {
     }
 
-    public HoaDonChiTiet(String maHoaDon, String maHoaDonCT, String maSPCT, String tenSP, String theLoai, String tacGia, double donGia, int soLuong, double thanhTien, Date ngayTao, String trangThai) {
+    public HoaDonChiTiet(String maHoaDon, String maHoaDonCT, String maSPCT, String tenSP, String theLoai, String tacGia, double donGia, int soLuong, double thanhTien, Date ngayTao, String trangThai, Date ngaySua) {
         this.maHoaDon = maHoaDon;
         this.maHoaDonCT = maHoaDonCT;
         this.maSPCT = maSPCT;
@@ -38,6 +39,15 @@ public class HoaDonChiTiet {
         this.thanhTien = thanhTien;
         this.ngayTao = ngayTao;
         this.trangThai = trangThai;
+        this.ngaySua = ngaySua;
+    }
+
+    public Date getNgayTao() {
+        return ngayTao;
+    }
+
+    public void setNgayTao(Date ngayTao) {
+        this.ngayTao = ngayTao;
     }
 
     public String getTrangThai() {
@@ -48,18 +58,15 @@ public class HoaDonChiTiet {
         this.trangThai = trangThai;
     }
 
-   
-
-    public Date getNgayTao() {
-        return ngayTao;
+    public Date getNgaySua() {
+        return ngaySua;
     }
 
-    public void setNgayTao(Date ngayTao) {
-        this.ngayTao = ngayTao;
+    public void setNgaySua(Date ngaySua) {
+        this.ngaySua = ngaySua;
     }
 
    
-
     public String getMaHoaDon() {
         return maHoaDon;
     }

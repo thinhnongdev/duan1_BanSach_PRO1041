@@ -55,7 +55,7 @@ public class VoucherService {
     }
 
 //    public Voucher getVoucher(String id) {
-//        sql = "select idVoucher,MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa,NgayTao,TrangThai,NgaySua from Voucher where MaVoucher = ?";
+//        sql = "select idVoucher,MaVoucher,TenVoucher,PhanTramGiam,ThoiGianBatDau,ThoiGianKetThuc,GiamToiDa,MoTa,NgayTao,TrangThai,NgaySua from Voucher where MaVoucher like ?";
 //        try {
 //            con = DBConnect.getConnection();
 //            PreparedStatement ps = con.prepareCall(sql);
